@@ -1,4 +1,4 @@
-
+from randList import get_list 
 
 
 #user_input = input("Please enter a comma seperated list of whole numbers")
@@ -35,6 +35,11 @@ def merge_sort(A):
 
         return merge(sorted_left, sorted_right) #returns bot sides sorted
 
-listA = [5,1,4,2,8,9,3]
-print(merge_sort(listA))
+# listA = [5,1,4,2,8,9,3]
+# print(merge_sort(listA))
 
+if __name__ == "__main__":
+    numbers = get_list()
+    sorted_numbers = merge_sort(numbers.copy())  
+    print("First 10 sorted numbers:", sorted_numbers[:10])
+    print("Correctly sorted:", sorted_numbers == sorted(numbers))
