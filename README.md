@@ -10,7 +10,7 @@ CS3 repository for 2026
 | **Student** | Raven Kopko |
 | **Mav Username**            | rrkopko |
 | **GitHub Username**         | QueenSherpa |
-| **Repository**          | git@github.com:QueenSherpa/cs2-RavenKopko.git |
+| **Repository**          | https://github.com/QueenSherpa/CS3 |
 
 
 ### Homework 2
