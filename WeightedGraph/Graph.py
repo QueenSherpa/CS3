@@ -53,6 +53,44 @@ class Graph:
                 line += f" ({neighbor}, {weight})"
             print(line)
 
+    def bfs(self, start):
+        visited = set()
+        queue = deque()
+        result = []
+
+        visited.add(start)
+        queue.append(start)
+        
+        while queue:
+            current = queue.popleft()
+            result.append(current)
+
+            for neighbor, weight in self.adj_list[current]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+
+                
+    def dfs(self,start):
+        visited = set()
+        stack = []
+        result = []
+
+        stack.appand(start) 
+
+        while stack:
+            current = stack.pop()
+            if current in visited:
+                continue 
+            visited.add(current)
+            result.append() 
+
+            #push neighbors in reverse so the lowers-weight neighbor is popped first
+            for neighbor, weight in reversed(self.adj_list[current]):
+                if neighbor not in visited:
+                    stack.append(neighbor)
+        return result
+
 def main():
     graph = Graph()
 
@@ -85,9 +123,11 @@ def main():
     # graph.add_edge("Klingon Empire", "Borg", 41)
     # graph.add_edge("Borg", "Tholian Assembly", 10)
 
+    # graph.display()
     print("Adjacency list:")
     graph.display()
-
+    print("BFS from Bajoran: ", graph.bfs("Bajoran"))
+    print("DFS from Bajoran: ", graph.dfs( + "Bajoran")) 
 
 if __name__ =="__main__":
     main() 
