@@ -6,6 +6,9 @@
 
 from collections import deque 
 
+
+
+
 class Graph:
 #version 1   
     def __init__ (self):
@@ -92,6 +95,33 @@ class Graph:
                 if neighbor not in visited:
                     stack.append(neighbor)
         return result
+
+
+def choose_vertex(graph):
+    print ("Choose a starting government to map from. Enter the numbers next to each faction in the list below.  ")
+    for number, name in enumerate(graph.vertices, start = 1):
+        print (f" {number}.{name}")
+    loop = True 
+    while loop is not False:
+        answer = input("Enter a number from the list: ") #input from the user for the government they want to start at
+        # if answer is not int:
+        #     print("Please enter the number next to the faction in the list provided")
+        # else:
+        #     return graph.vertices(answer)
+        try:
+            choice = int(answer)
+        except ValueError:
+            print("Please enter the number associated with the government in the list, and not the name.")
+            continue 
+        if 1 <= choice <= len(graph.vertices):
+            return graph.vertices[choice - 1]
+        else:
+            print("That does not exist in the list, get a brain that works and then come back")
+
+      
+
+
+
 
 def main():
     graph = Graph()
