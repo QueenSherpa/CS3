@@ -70,20 +70,22 @@ class Graph:
                     visited.add(neighbor)
                     queue.append(neighbor)
 
+        return result 
+
                 
     def dfs(self,start):
         visited = set()
         stack = []
         result = []
 
-        stack.appand(start) 
+        stack.append(start) 
 
         while stack:
             current = stack.pop()
             if current in visited:
                 continue 
             visited.add(current)
-            result.append() 
+            result.append(current) 
 
             #push neighbors in reverse so the lowers-weight neighbor is popped first
             for neighbor, weight in reversed(self.adj_list[current]):
@@ -127,7 +129,7 @@ def main():
     print("Adjacency list:")
     graph.display()
     print("BFS from Bajoran: ", graph.bfs("Bajoran"))
-    print("DFS from Bajoran: ", graph.dfs( + "Bajoran")) 
+    print("DFS from Bajoran: ", graph.dfs("Bajoran")) 
 
 if __name__ =="__main__":
     main() 
@@ -135,5 +137,6 @@ if __name__ =="__main__":
 
 
 # holyC
+
 # terry davis 
 
